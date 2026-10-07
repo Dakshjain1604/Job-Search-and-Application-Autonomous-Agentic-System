@@ -1,0 +1,460 @@
+% =====================================================================
+%  Daksh Jain - GENERAL RESUME (no target role)
+%  REVISED 2026-09-16 (supersedes any conflicting note below):
+%   - Bullets rewritten to ONE STORY each, 15-25 words, strong verb first,
+%     max 4 named technologies. Lint: resume-build/scripts/bullet_check.py
+%   - NeoClaw corrected against its own repo: a Telegram/WhatsApp/Slack/
+%     Discord bridge to the NEO coding agent. NOT customer-facing, NO
+%     confidence-based human escalation. Loop detection was added by a
+%     teammate after handover, so it is not claimed.
+%   - neo-mcp README now lists seven editor clients; "six" is retired.
+%     Name Claude Code, Cursor, Codex instead of a count.
+%
+%  This is the MASTER / DEFAULT page. Send it when there is no job
+%  description to tailor against: recruiter cold inbound, LinkedIn
+%  "send me your resume", referrals, job boards, generic SWE postings.
+%  Every tailored build in this repo (m/, emergent/, atobic/, lyzr/,
+%  bolna/, optimized/) is a NARROWING of this page, not a superset of
+%  it. When a JD arrives, copy this file into a new directory and cut,
+%  do not start from a tailored page.
+%
+%  Compile:  tectonic Daksh_Jain_Resume.tex
+%            (pdflatex is NOT installed on this machine; tectonic is)
+%
+%  Built 2026-09-05, to the m/ and emergent/ standard.
+%
+% ---------------------------------------------------------------------
+%  POSITIONING - read before editing
+% ---------------------------------------------------------------------
+%
+%  0. REGISTER. Every bullet is an IMPACT STATEMENT, not a story. This
+%     is THE lesson from the m/ rebuild, where two earlier drafts got
+%     it wrong: 2026-09-03 was first person ("I designed", "I added"),
+%     and the first 2026-09-05 pass was third person but still
+%     narrative, walking the reader through each incident in the order
+%     it happened with the result buried at the end. Both read like
+%     interview answers. Corrected the same day on Daksh instruction.
+%
+%     THE RULE THIS PAGE FOLLOWS, and the sources for it:
+%       - XYZ (Laszlo Bock, ex-Google SVP People Ops): "Accomplished
+%         [X] as measured by [Y] by doing [Z]." OUTCOME FIRST.
+%       - Bullet shape: [action verb] + [what was built or changed] +
+%         [how / tools] + [quantified outcome].
+%       - 3-5 bullets per role; the most recent role gets 5.
+%       - Recruiters scan 6 to 7.4 seconds in an F-pattern (Ladders
+%         eye-tracking). Only the FIRST FEW WORDS of a bullet are
+%         reliably read, so the bolded lead phrase must carry the
+%         result and the keyword by itself.
+%       - Named anti-patterns, all avoided here: unscoped metrics,
+%         passive voice, tool lists with no context, vague scope
+%         words, overclaiming.
+%     If a bullet reads chronologically, it is wrong. Check the five
+%     lead phrases in isolation; they should read as a summary on
+%     their own:
+%       Own the full product surface as sole engineer / Designed,
+%       shipped and maintained neo-mcp / Delivered NeoClaw / Restored
+%       unattended production uptime / Gated model and prompt changes
+%       on measured quality.
+%
+%  1. BALANCED POSITIONING, chosen by Daksh 2026-09-05. The title line
+%     is "Full-Stack and Production AI Systems" and the NEO bullets run
+%     ownership -> open source -> agents -> reliability -> evaluation.
+%     That order clears a plain SWE screen on bullet 1 and an AI screen
+%     by bullet 3. The two alternatives were considered and rejected
+%     FOR THIS PAGE ONLY: full-stack-first buries the single most
+%     checkable artifact he owns (46 PyPI releases), and AI-first fails
+%     the large number of generic backend and full-stack postings this
+%     page has to survive. Both alternatives already exist as tailored
+%     builds: optimized/Daksh_Jain_Resume_Full_Stack.tex and
+%     optimized/Daksh_Jain_Resume_AI_Engineer.tex.
+%
+%  2. LOCATION IS CITY-NEUTRAL: "open to relocation", chosen by Daksh
+%     2026-09-05. The tailored pages name a city because their JD named
+%     one (m/ and emergent/ say "relocating, available onsite in
+%     Bengaluru"; atobic/ says Hyderabad). A general page must not,
+%     because it goes to all of them plus remote. Do NOT copy the
+%     Bengaluru wording here when copying anything else across.
+%
+%  3. YEAR COUNT IS STATED ONCE, in the Summary, and then dropped.
+%     "1+ year of professional software engineering experience" is
+%     true and conservative: NEO alone is Oct 2025 to Sep 2026
+%     (11 months) and the Celebal backend internship adds 3 more.
+%     Minimum-years screens are common and this clears them honestly.
+%     Do NOT argue with the dates anywhere else on the page; a resume
+%     that defends its own timeline draws attention to it.
+%
+%  4. CELEBAL BACKEND INTERNSHIP IS ON THE PAGE (Jun-Aug 2024,
+%     Node.js). Real, already public, and dropped from the AI-focused
+%     builds only for space. Corroborated three ways: the live
+%     portfolio lists it, Portfolio/src/data/experience.ts:150-163
+%     carries the detail, and optimized/Daksh_Jain_Resume_Full_Stack
+%     .tex:105 already used a combined form. Dates confirmed by Daksh
+%     2026-09-03. Wording lifted verbatim from the emergent build.
+%     The two Celebal roles share ONE header line but keep their OWN
+%     dates rather than collapsing to a continuous Jun 2024 - Feb 2025
+%     range: there is a real gap in September 2024 and a combined
+%     range would paper over it.
+%
+%  5. PAYMENTS ARE NOT CLAIMED. The one place "payment" appears is the
+%     Celebal line, and it says DOCUMENTED the payment and user APIs in
+%     Swagger. He did not build payments. That is the entire claim and
+%     it must not drift.
+%
+%  6. AGENT-DIRECTED WORK IS LABELLED AS SUCH, always. Bullet 5 says
+%     "scoped, directed and validated 140+ builds", never "built". The
+%     verbs are the honest ones and they are also the ones the claim
+%     can survive in an interview. Nothing in Selected Projects was
+%     agent-built: BioScript carries an "autonomously built by Neo, an
+%     AI/ML agent" disclaimer in its README and website_cloner is an
+%     Orchids take-home template, so both stay off this page entirely.
+%
+%  7. GitHub in the header points at Dakshjain1604, NOT dakshjain-1616.
+%     Every project linked here resolves to that account and is
+%     personally built with no autonomous-build disclaimer. neo-mcp
+%     links to PyPI, where the 46-release history is independently
+%     checkable without a detour through the other account.
+%
+%  8. INTERVIEW AI IS DEPRECATED FROM THIS PAGE, and this is a change
+%     from optimized/ and atobic/, which both claim "157 tests" for it.
+%     Checked 2026-09-05 against the GitHub trees and branches APIs:
+%     Dakshjain1604/Ai_Interview has ONE branch (main @ 4972389f), last
+%     pushed 2025-09-30, with ZERO test files and NO CI workflow. The
+%     157-test platform work is on a local-only branch
+%     (platform/live-infra in Documents/CODES/CODES_2/AI_interview)
+%     that was never pushed. A reviewer who clicks the link lands on
+%     nothing that supports the claim, so the claim comes off.
+%     TO RESTORE IT: push that branch, re-verify the count on origin,
+%     then add it back. Not before.
+%
+%  9. NO "ALSO SHIPPED" STRIP, and this is the one thing this page
+%     drops that m/ carries. The page ran three rendered lines long
+%     and the strip (SOH Ships + LLM Judge) was the least value per
+%     line on it: three substantial featured projects already carry
+%     links, one of them live, and the header links the GitHub profile
+%     where both sit one click away. Bloomberg was kept over the strip
+%     because it is more depth per line (multi-vendor integration,
+%     circuit breakers, WebSocket over Redis pub/sub, Compose, 32
+%     tests) than two one-clause mentions.
+%     IF IT IS EVER RESTORED: LLM Judge must NOT be called a personal
+%     side project and must carry NO test claim. Its README title is
+%     "LLM Response Judge by NEO" (NEO is his employer; the README
+%     carries no authorship disclaimer, so "by NEO" reads as product
+%     branding) and Project_Catalog.md found zero test files. Say only
+%     what the thing is and link it. Restoring it costs 3 lines, so
+%     something else has to come off.
+%
+% ---------------------------------------------------------------------
+%  VERIFIED 2026-09-05 - all re-run today against live sources
+% ---------------------------------------------------------------------
+%   - neo-mcp: 46 releases on PyPI, MIT, latest 0.5.13. PyPI JSON API.
+%   - neo-mcp: 644 tests (pytest --collect-only, project venv,
+%     Desktop/Neo_codes/neo_mcp_public/neo-mcp/python).
+%   - neo-mcp: six clients confirmed in README (Claude Code, Cursor,
+%     VS Code, Windsurf, Zed, Codex).
+%   - Coding Agent: 1,346 tests (vitest list) across 73 test files on
+%     origin/main; LICENSE, .github/workflows/ci.yml, and all three
+%     guardrail sources present on origin (src/utils/permission-system
+%     .ts, src/utils/git-rollback.ts, src/utils/dependency-graph.ts).
+%     Local HEAD == origin/main.
+%   - DocuMind: 187 tests collected (pytest --collect-only, project
+%     venv). Local HEAD == origin/main, so 187 is what a reviewer gets.
+%     NOTE: earlier builds said 182; the suite grew. 187 is today.
+%   - DocuMind eval: committed at microService/tuning/results/
+%     scoped_ablation.md, 40-question eval set, Recall@10 0.150 ->
+%     0.425 and MRR 0.064 -> 0.352. The +183% / +454% figures are the
+%     README's own, computed from unrounded values; a reader
+%     recomputing from the rounded table gets +183% / +450%. Matching
+%     the committed README is deliberate.
+%   - BloombergTerminal: 32 tests (pytest --collect-only, project
+%     venv), CI green, local HEAD == origin/main.
+%   - SOH Ships: 43 test functions on origin/main, LICENSE and CI
+%     present.
+%   - All six linked GitHub repos confirmed public via the GitHub API.
+%
+% ---------------------------------------------------------------------
+%  ATS notes - inherited from bolna/, optimized/, atobic/, emergent/
+%  and m/. Do not "fix":
+% ---------------------------------------------------------------------
+%   1. Computer Modern / OT1 ON PURPOSE. lmodern+T1 made pdftotext emit
+%      U+FB01 ligatures. OT1 CM extracts plain ASCII. Historically the
+%      builds also avoided words with an "ff"/"ffi" cluster (offer,
+%      effort, staff, handoff, different, efficient, affected, office,
+%      traffic - the portfolio wording for the Celebal role is
+%      "high-traffic e-commerce platform" and every build since says
+%      \mbox{high-volume} for exactly that reason). That avoidance is
+%      kept here. Extraction was re-verified clean after this build:
+%      pdftotext output is pure ASCII, no U+FB0x.
+%   2. Employer/date/location INLINE and LEFT-ALIGNED, not \hfill.
+%      \hfill is the single most common cause of a parser reading the
+%      date as part of the job title.
+%   3. ASCII punctuation only. "--" renders as an en-dash; use commas
+%      or parens. A bare "~" is a LaTeX non-breaking space and silently
+%      eats the glyph. Avoid possessive "'s" (extracts as a curly
+%      quote).
+%   4. Single column, no tables/graphics, contact in BODY not a header,
+%      standard section names (Summary / Technical Skills / Experience /
+%      Projects / Education), ONE page.
+%   5. "backoff" is the one deliberate ff exception, inherited from the
+%      M build where extraction was verified clean, and re-verified
+%      here. Re-check it first if the font is ever changed.
+%   6. Hyphenation is suppressed (justified text was splitting words
+%      mid-line, e.g. "pay-ment", which breaks keyword matching).
+%      Re-check for "Overfull \hbox" warnings after any edit.
+% =====================================================================
+
+\documentclass[10pt,letterpaper]{article}
+
+\usepackage[left=0.42in,right=0.42in,top=0.16in,bottom=0.12in]{geometry}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage[hidelinks]{hyperref}
+
+\hypersetup{
+  colorlinks=true,
+  urlcolor=[rgb]{0.0,0.15,0.55},
+  pdftitle={Daksh Jain Resume},
+  pdfauthor={Daksh Jain},
+  pdfsubject={Software Engineer Resume - Full Stack and Production AI Systems},
+  pdfkeywords={Software Engineer, Software Development Engineer, SDE,
+    Full Stack Engineer, Full Stack Developer, Backend Engineer,
+    Frontend Engineer, Product Engineer, Founding Engineer,
+    AI Engineer, Forward Deployed Engineer, Web Applications,
+    Python, TypeScript, JavaScript, SQL, Node.js, Express, FastAPI,
+    React, Next.js, Redux, Tailwind CSS, MongoDB, PostgreSQL, Redis,
+    ChromaDB, REST APIs, API Design, GraphQL, WebSocket, Webhooks,
+    OAuth 2.0, JWT, Swagger, OpenAPI, Microservices, Docker, nginx,
+    AWS, CI/CD, GitHub Actions, Prometheus, Grafana, Git,
+    Testing, pytest, vitest, Jest, Test Driven Development,
+    Third Party API Integration, Production Debugging,
+    Root Cause Analysis, Reliability, Circuit Breaker, Retry,
+    Exponential Backoff, Idempotency, Graceful Degradation,
+    Provider Failover, Connection Pooling, Rate Limiting, Caching,
+    Observability, Tracing, Open Source, Semantic Versioning,
+    LLM, AI Agents, Agentic Systems, MCP, Model Context Protocol,
+    Tool Calling, Function Calling, Structured Outputs, Subagents,
+    Multi Agent Orchestration, Human in the Loop, Guardrails,
+    Sandboxing, RAG, Retrieval Augmented Generation, Hybrid Search,
+    Knowledge Graphs, Reranking, Retrieval Evaluation, LLM Evaluation,
+    Prompt Engineering, Claude API, OpenAI API, LangChain,
+    Claude Code, Cursor, Codex, Machine Learning, NLP, scikit-learn,
+    pandas, NumPy, India, Bengaluru, Bangalore, Hyderabad, Remote,
+    Relocation, Immediate Joiner}
+}
+
+\ifdefined\pdfgentounicode
+  \input{glyphtounicode}
+  \pdfgentounicode=1
+\fi
+
+\setlength{\parindent}{0pt}
+\pagestyle{empty}
+
+% Leading pulled to 0.97 to hold ONE page. At 10pt Computer Modern this is a ~0.35pt
+% change per line and is not visible to a reader; it buys ~2 lines over the page. If
+% content is ever cut, restore \linespread{0.97} before loosening anything else.
+\linespread{0.97}\selectfont
+
+% Justified text was splitting words mid-line ("pay-ment"). Suppress hyphenation and let TeX
+% stretch instead. Re-check for "Overfull \hbox" warnings after any edit to this file.
+\hyphenpenalty=10000
+\exhyphenpenalty=10000
+\tolerance=3000
+\emergencystretch=2em
+
+\titleformat{\section}
+  {\large\bfseries}{}{0em}{}[\vspace{-0.75em}\rule{\textwidth}{0.6pt}]
+\titlespacing*{\section}{0pt}{1pt}{1pt}
+
+% \entrygap separates project entries, which already carry a bold title line and a link,
+% so 1pt is enough there. \rolegap is bigger and is used ONCE, before Celebal: at 1pt that
+% entry sat flush under the NEO bullets and read as a sixth NEO bullet on a scan.
+\newcommand{\entrygap}{\vspace{1pt}}
+\newcommand{\rolegap}{\vspace{3.5pt}}
+
+\setlist[itemize]{leftmargin=1.05em, itemsep=0.5pt, topsep=1.5pt, parsep=0pt, label=$\bullet$}
+
+%
+% ---------------------------------------------------------------------
+%  UPDATED 2026-09-15. What changed and why.
+% ---------------------------------------------------------------------
+%
+%  A. REGISTER CORRECTED TO FORMAL. The impact-statement rule above is
+%     right and stands, but the prose had drifted into chains of bolded
+%     nouns (8 \textbf spans a bullet, comma-separated tool lists inside
+%     Experience). Daksh rejected that on 2026-09-15, and rejected an
+%     over-corrected conversational rewrite the same day. The standard is
+%     now FORMAL professional English in complete sentences:
+%       - outcome first (XYZ, Bock), then method, then metric;
+%       - NEVER first person, not even in the Summary;
+%       - 2 to 3 bolded spans per bullet, the lead phrase and the
+%         metrics ONLY. Do not bold mid-sentence technical nouns
+%         (React, Redis, Docker, JWT, git). Un-bolding them is what
+%         makes the numbers visible;
+%       - no comma-chains of tools inside Experience; that is what the
+%         Skills section is for.
+%     Full rationale and before/after: sierra/README.md section 3.
+%
+%  B. "SOLE ENGINEER" REMOVED. Daksh says it sounds bad. Bullet 1 now
+%     reads "Own the full product surface". Same scope claim, and it is
+%     the wording already used in delwa/ and sierra/.
+%
+%  C. STALE NUMBERS FIXED, re-verified 2026-09-15:
+%       46 releases -> 49   (PyPI JSON API, latest 0.5.16, MIT)
+%       644 tests   -> 700+ (518 Python collected at local HEAD 3bf9850
+%                            plus 220 in npm/tests/system.test.ts = 738)
+%     Also newly stated: neo-mcp is published on npm as well as PyPI
+%     (14 versions, latest 1.1.26). Do not reuse 46 or 644 anywhere.
+%
+%  D. SKILLS SECTION REBUILT. It was three long comma-runs that mixed
+%     concepts, protocols, techniques, metrics and products. Now four
+%     parallel labelled categories, each sized to one line. Metrics
+%     (Recall@K) stay because this page has room and they are earned by
+%     the DocuMind bullet; IDEs (Claude Code, Cursor) came out, because
+%     using an editor is not a skill.
+%
+%  E. LOCATION LINE aligned to the standard settled 2026-09-15:
+%     "Jaipur, India (open to relocation, available onsite)". The
+%     "available onsite" half is what clears an in-person screen, and
+%     naming no city keeps this page reusable, which is the whole point
+%     of general/.
+%
+%  F. SIBLING PAGE. Daksh_Jain_Resume_AI.tex is the AI-first version,
+%     for any posting whose title contains AI, ML, LLM, GenAI or Agent.
+%     Use THIS file for plain SWE, backend and full-stack postings.
+%     Both general pages live in the REPO ROOT; only company-specific
+%     builds get their own folder.
+%     ATS-scored 2026-09-15: format 100%%, keyword coverage 98%% against
+%     the AI-engineer corpus in the resume-build skill.
+%
+%  G. SECTION ORDER: Summary, Technical Skills, Experience, Projects,
+%     Education. Skills sits ABOVE Experience deliberately - ATS weights
+%     early content, so technical keywords parse before experience. This
+%     was documented in the old general/README.md and was accidentally
+%     dropped in the 2026-09-15 rewrite; restored the same day. Do not
+%     move it back down.
+%
+%
+% ---------------------------------------------------------------------
+%  NUMBER POLICY (set 2026-09-15). Read before changing any figure.
+% ---------------------------------------------------------------------
+%  A count that can GROW is written as a FLOOR, never as an exact value.
+%  An exact count goes stale UPWARD and silently becomes false: neo-mcp
+%  read "46 releases" on 2026-09-05 and was 49 ten days later, so every
+%  page carrying 46 was wrong without anyone touching it.
+%
+%  A floor cannot go stale that way. Understating is defensible in an
+%  interview; overstating is not. Daksh set this rule explicitly.
+%
+%  FLOORED here (these grow):
+%    45+ releases        actual 49 on PyPI, 2026-09-15
+%    700+ automated tests  actual 738 (518 Python + 220 TypeScript)
+%    1,300+ tests / 70+ files  actual 1,346 across 73, Coding Agent
+%    30+ tests           actual 32, BloombergTerminal
+%    50+ tools, 140+ builds, 1+ year   already floors
+%
+%  EXACT on purpose (these are frozen against a committed artifact and
+%  must NOT be rounded, because precision is the credibility signal):
+%    +183%% Recall@10 and +454%% MRR   committed 40-question eval set
+%    15 escalating levels             Ornith design constant
+%    19 audio conditions, five speech models, three CPU TTS models
+%    seven weighted dimensions        CodeArena scoring table
+%    five releases in a single day    a historical event
+%    six third-party clients, CGPA 8.6, promoted in 3 months
+%
+%  WHEN RE-VERIFYING: raise a floor only after re-running the check that
+%  backs it. Never lower one. Never convert a floor back to an exact
+%  value. The verification commands are in the resume-build skill,
+%  Phase 3.
+% ---------------------------------------------------------------------
+% =====================================================================
+
+\begin{document}
+
+% ---------------- CONTACT (in body, not a header) --------------------
+\begin{center}
+  {\LARGE\bfseries Daksh Jain}\\[1pt]
+  Software Engineer | Full-Stack (React, Node.js, Python) and Production AI Systems\\[1pt]
+  Jaipur, India (open to relocation, available onsite) |
+  \href{mailto:dakshjain080@gmail.com}{dakshjain080@gmail.com} |
+  +91-76270-56978\\[1pt]
+  \href{https://github.com/Dakshjain1604}{github.com/Dakshjain1604} |
+  \href{https://linkedin.com/in/daksh-jain16}{linkedin.com/in/daksh-jain16} |
+  \href{https://portfolio-dakshjain.vercel.app}{portfolio-dakshjain.vercel.app}
+\end{center}
+
+% ---------------- SUMMARY --------------------------------------------
+\section*{Summary}
+
+Software engineer with \textbf{1+ year} shipping production web applications and AI systems in
+Python, TypeScript, React, Node.js and FastAPI. Currently own an AI platform end to end at NEO,
+promoted from intern to full-time in three months. Author of \textbf{neo-mcp}, an open-source
+MCP server on PyPI and npm used from Claude Code, Cursor and Codex across \textbf{45+ releases}.
+
+% ---------------- SKILLS ---------------------------------------------
+\section*{Technical Skills}
+
+\textbf{Languages}: Python, TypeScript, JavaScript, SQL\\[1pt]
+\textbf{Front End and Back End}: React, Next.js, Tailwind CSS; Node.js, Express, FastAPI;
+REST API design, GraphQL, WebSocket, webhooks, OAuth 2.0, JWT, Swagger/OpenAPI\\[1pt]
+\textbf{Data and Infrastructure}: MongoDB, PostgreSQL, Redis, ChromaDB; Docker, nginx, AWS,
+CI/CD (GitHub Actions), Prometheus and Grafana, testing (pytest, vitest, Jest)\\[1pt]
+\textbf{AI and Agents}: LLM agents, tool and function calling, structured outputs, multi-agent
+orchestration, MCP (Model Context Protocol), prompt engineering, RAG, hybrid search, reranking,
+LLM evaluation, guardrails, Claude and OpenAI APIs\\[1pt]
+\textbf{Reliability}: production debugging, root-cause analysis, circuit breakers, retries with
+exponential backoff, idempotency, graceful degradation, observability and tracing
+
+% ---------------- EXPERIENCE -----------------------------------------
+\section*{Experience}
+
+\textbf{NEO (heyneo.com)}, AI engineering platform | \textbf{AI and Full Stack Engineer} |
+Oct 2025 - Present | Jaipur, India\\
+\textit{Promoted from Intern to Full-Time in 3 months}
+\begin{itemize}
+  \item \textbf{Led the v1 to v2 API migration} after the original engineer became unavailable, implementing and validating replacement Node.js endpoints to restore backend functionality.
+  \item \textbf{Rebuilt the React and TypeScript front end} against the v2 API, shipping every change through Docker and GitHub Actions CI/CD.
+  \item \textbf{Operate the Node.js and MongoDB services} behind the v2 API, with aggregation pipelines, Redis caching and OAuth 2.0 authentication.
+  \item \textbf{Built neo-mcp}, an open-source, local-first Python MCP server that lets Claude Code, Cursor, Codex and other editors hand AI and ML tasks to NEO.
+  \item \textbf{Built NeoClaw}, a chat bridge from Telegram, WhatsApp, Slack and Discord to the NEO coding agent, driven by an LLM agent loop over \textbf{50+ tools}.
+  \item \textbf{Eliminated recurring manual restarts} on a production service by diagnosing connection-pool exhaustion and shipping idempotency-safe retries across \textbf{five releases in one day}.
+  \item \textbf{Migrated the NEO documentation site} to Next.js and Nextra, restructuring content for developer discoverability and search at docs.heyneo.com.
+  \item \textbf{Established evaluation as the release gate} for prompt and model changes, replacing subjective review with measured output quality.
+\end{itemize}
+
+\rolegap
+\textbf{Celebal Technologies} | \textbf{Backend Intern} Jun - Aug 2024; \textbf{Data Science Intern}
+Oct 2024 - Feb 2025 | Jaipur, India
+\begin{itemize}
+  \item \textbf{Built REST and GraphQL APIs} in Node.js and Express for a \mbox{high-volume} e-commerce platform, with authenticated CRUD routes and interactive API documentation.
+  \item \textbf{Built ML and NLP classification pipelines} that extract structure from unstructured text, using scikit-learn and pandas.
+\end{itemize}
+
+% ---------------- PROJECTS -------------------------------------------
+\section*{Selected Projects}
+
+\textbf{Coding Agent}: autonomous CLI coding agent | \href{https://github.com/Dakshjain1604/Ai-coding-Agent}{GitHub} | TypeScript, Node.js
+\begin{itemize}
+  \item \textbf{Engineered a CLI coding agent} on a hand-written agent loop with no orchestration framework, applying repository-wide changes behind \textbf{1,300+ tests}.
+  \item \textbf{Placed every destructive command behind a permission gate}, with git rollback snapshots and AST blast-radius analysis before refactors are applied.
+\end{itemize}
+
+\entrygap
+\textbf{DocuMind AI}: hybrid GraphRAG document assistant | \href{https://docu-mind-ai-nu.vercel.app}{live} | \href{https://github.com/Dakshjain1604/DocuMind-Ai}{GitHub} | Next.js, FastAPI, ChromaDB
+\begin{itemize}
+  \item \textbf{Built a hybrid RAG pipeline} fusing embedding-based vector search, BM25 and knowledge-graph traversal with cross-encoder reranking, reaching \textbf{+183\% Recall@10} over a vector-only baseline.
+\end{itemize}
+
+\entrygap
+\textbf{BloombergTerminal}: real-time market data terminal | \href{https://github.com/Dakshjain1604/bloomberg-terminal-clone}{GitHub} | Node.js, FastAPI, React, Redis
+\begin{itemize}
+  \item \textbf{Integrated three market-data vendors} behind one service layer, with per-provider circuit breakers and graceful degradation that keeps every panel populated during outages.
+  \item \textbf{Streamed live quotes over WebSocket} through Redis pub/sub with a \textbf{100 ms batch flusher}, deployed as a five-service Docker Compose stack.
+\end{itemize}
+
+% ---------------- EDUCATION ------------------------------------------
+\section*{Education}
+
+\textbf{JECRC University} | \textit{B.Tech, Computer Science and Engineering} | CGPA 8.6/10 |
+\mbox{2022 - 2026}
+
+\end{document}

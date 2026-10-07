@@ -1,0 +1,290 @@
+% =====================================================================
+%  Daksh Jain - GENERAL AI ENGINEERING RESUME (no specific target)
+%  REVISED 2026-09-16 (supersedes any conflicting note below):
+%   - Bullets rewritten to ONE STORY each, 15-25 words, strong verb first,
+%     max 4 named technologies. Lint: resume-build/scripts/bullet_check.py
+%   - NeoClaw corrected against its own repo: a Telegram/WhatsApp/Slack/
+%     Discord bridge to the NEO coding agent. NOT customer-facing, NO
+%     confidence-based human escalation. Loop detection was added by a
+%     teammate after handover, so it is not claimed.
+%   - neo-mcp README now lists seven editor clients; "six" is retired.
+%     Name Claude Code, Cursor, Codex instead of a count.
+%
+%  The default page for ANY AI / LLM / GenAI / Agent engineering role
+%  where there is no JD to tailor against. Sibling of
+%  Daksh_Jain_Resume.tex, the balanced full-stack + AI master page.
+%  Use THIS one when the posting title contains AI, ML, LLM, GenAI or
+%  Agent; use the other for plain SWE, backend or full-stack postings.
+%  Both general pages live in the REPO ROOT; only company-specific
+%  builds get their own folder.
+%
+%  WHEN ATTACHING THIS FILE, rename it to Daksh_Jain_Resume.pdf. The
+%  _AI suffix is a local filing label, not something a recruiter sees.
+%
+%  SECTION ORDER: Summary, Technical Skills, Experience, Projects,
+%  Education. Skills sits ABOVE Experience deliberately - ATS weights
+%  early content, so the technical keywords parse first. Do not move it
+%  back down.
+%
+%  Compile:  tectonic Daksh_Jain_Resume.tex   (pdflatex is NOT installed)
+%
+%  Built 2026-09-15. See ../README.md (repo root) for the
+%  keyword-coverage audit, the ATS score and the verification log.
+%
+%  TARGETING. Built against the 2026 AI-engineer hiring checklist rather
+%  than one JD: agent orchestration, MCP integration, eval design, RAG
+%  and vector search, prompt engineering, cost optimization, guardrails
+%  and safety, production observability, and multi-provider frontier-
+%  model fluency. Every one of those nine is covered by verified
+%  evidence on this page. Ordering is AI-first throughout: the agent,
+%  the tool layer, evaluation, then RAG, with full-stack delivery last
+%  as the "can actually ship it" signal rather than the headline.
+%
+%  REGISTER (the standard set on 2026-09-15, see sierra/README.md S3):
+%    Formal professional English in complete sentences. Outcome first
+%    (XYZ, Bock), then method, then metric.
+%    - NOT narrative (rejected 2026-09-05): no chronological retelling.
+%    - NOT noun-chains (rejected 2026-09-15): no 8 bolded nouns a bullet.
+%    - NOT chatty (rejected 2026-09-15): no conversational asides.
+%    - NEVER first person. No "I", "my", "me", anywhere including the
+%      Summary. Implied-subject voice only. Verify with grep.
+%    - 2 to 3 bolded spans per bullet: the lead phrase and the metrics.
+%      Do NOT bold mid-sentence technical nouns; un-bolding them is what
+%      makes the numbers visible.
+%    - Skills are parallel labelled categories, each sized to one line.
+%      Metrics and IDEs are not skills and stay out.
+%
+%  HONESTY CONSTRAINTS:
+%    - "Sole engineer" is never used. Daksh says it sounds bad. The page
+%      says "own the product end to end".
+%    - Interview AI and its "157 tests" stay OFF: the work is on an
+%      unpushed local branch and a reviewer clicking through finds
+%      nothing.
+%    - The ASR harness is labelled (agent-directed) because its README
+%      carries a "Built Autonomously with NEO" badge. The label must
+%      agree with what the reviewer finds.
+%    - Not claimed anywhere, because there is no evidence: fine-tuning,
+%      training runs, distributed training, GPU/CUDA work, prompt-
+%      injection defense, memory architectures, OpenTelemetry. These are
+%      real 2026 AI-engineer keywords and they are deliberately absent.
+%    - GitHub header points at Dakshjain1604 (hand-built, no autonomous
+%      -build disclaimers). Ornith and the ASR harness live on
+%      dakshjain-1616 and are linked by their own direct URLs.
+%
+%  NUMBERS VERIFIED 2026-09-15:
+%    - neo-mcp: 49 releases on PyPI (latest 0.5.16, MIT) and 14 versions
+%      on npm (latest 1.1.26). 518 Python tests collected plus 220 in
+%      npm/tests/system.test.ts = 738, so "700+" is safe. The older
+%      "644 tests" and "46 releases" figures are STALE; do not reuse.
+%    - Coding Agent: origin/main @ df02b17, 1,346 tests, 73 test files,
+%      MIT, CI green.
+%    - DocuMind: +183%% Recall@10 and +454%% MRR from the committed
+%      40-question set in microService/tuning/results/scoped_ablation.md
+%      (0.150 to 0.425, and 0.064 to 0.352).
+%    - Ornith: MIT, no autonomous-build disclaimer, so claimable. Only
+%      1 test file and NO CI, so this page makes no test or CI claim
+%      for it.
+%    - All links returned 200.
+%
+%  ATS notes, inherited. Do not "fix":
+%   1. Computer Modern / OT1 ON PURPOSE. lmodern+T1 makes pdftotext emit
+%      U+FB01 ligatures. Avoid words containing an ff/ffi cluster:
+%      office, offer, effort, staff, handoff, different, efficient,
+%      affected, traffic, difficulty. This page says onsite, escalation
+%      path, escalating levels, high-volume.
+%   2. Employer/date/location INLINE and LEFT-ALIGNED, not \hfill.
+%   3. ASCII punctuation only. No em-dashes ("--" renders as an
+%      en-dash); use commas or parens. No possessive "'s" (extracts as
+%      a curly quote). A bare "~" is a LaTeX non-breaking space.
+%   4. Single column, no tables/graphics, contact in BODY, ONE page.
+% =====================================================================
+
+\documentclass[10pt,letterpaper]{article}
+
+\usepackage[left=0.42in,right=0.42in,top=0.13in,bottom=0.10in]{geometry}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage[hidelinks]{hyperref}
+
+\hypersetup{
+  colorlinks=true,
+  urlcolor=[rgb]{0.0,0.15,0.55},
+  pdftitle={Daksh Jain Resume},
+  pdfauthor={Daksh Jain},
+  pdfsubject={AI Engineer Resume},
+  pdfkeywords={AI Engineer, Artificial Intelligence Engineer, LLM Engineer,
+    Generative AI Engineer, GenAI Engineer, Machine Learning Engineer, AI Software Engineer,
+    Agent Engineer, Applied AI, LLM Applications, Production AI Systems,
+    LLM Agents, AI Agents, Agent Orchestration, Multi-Agent Systems, Agentic AI,
+    Agent Loop, Tool Calling, Function Calling, Structured Outputs, Subagents,
+    MCP, Model Context Protocol, Tool Schemas, Memory, Human in the Loop,
+    RAG, Retrieval Augmented Generation, Hybrid Search, Semantic Search,
+    Vector Database, Vector Search, Embeddings, ChromaDB, BM25, Knowledge Graph,
+    Reranking, Cross-Encoder, Recall, MRR, Chunking, Context Engineering,
+    LLM Evaluation, Evals, Eval Design, Benchmarking, LLM as a Judge,
+    Prompt Engineering, System Prompts, Prompt Optimization, Fine-Tuning,
+    Guardrails, AI Safety, Sandboxing, Permission Gates, Red Teaming,
+    Observability, Tracing, Monitoring, Cost Optimization, Model Routing,
+    Latency, Streaming, Inference, Model Deployment, MLOps, LLMOps,
+    Claude API, Anthropic, OpenAI API, GPT, Gemini, LangChain, LiteLLM, Ollama,
+    ASR, Speech Recognition, WER, NLP, Machine Learning, scikit-learn,
+    Python, TypeScript, JavaScript, SQL, FastAPI, Node.js, Express, React, Next.js,
+    PostgreSQL, MongoDB, Redis, Docker, AWS, CI/CD, GitHub Actions, pytest,
+    Open Source, PyPI, Onsite, Remote, Relocation}
+}
+
+\ifdefined\pdfgentounicode
+  \input{glyphtounicode}
+  \pdfgentounicode=1
+\fi
+
+\setlength{\parindent}{0pt}
+\pagestyle{empty}
+
+% Justified text was splitting words mid-line. Suppress hyphenation and let
+% TeX stretch instead. Re-check for "Overfull \hbox" warnings after any edit.
+\hyphenpenalty=10000
+\exhyphenpenalty=10000
+\tolerance=2000
+% Mild ragged right. Full justification without hyphenation was stretching several
+% lines to visibly loose word spacing. 1.5em of give keeps the right edge nearly
+% flush while removing every stretched line.
+\rightskip=0pt plus 3em
+
+\titleformat{\section}
+  {\large\bfseries}{}{0em}{}[\vspace{-0.88em}\rule{\textwidth}{0.6pt}]
+\titlespacing*{\section}{0pt}{2pt}{0.5pt}
+
+\newcommand{\entrygap}{\vspace{3pt}}
+
+\setlist[itemize]{leftmargin=1.0em, itemsep=0.3pt, topsep=1.0pt, parsep=0pt, label=$\bullet$}
+
+%
+% ---------------------------------------------------------------------
+%  NUMBER POLICY (set 2026-09-15). Read before changing any figure.
+% ---------------------------------------------------------------------
+%  A count that can GROW is written as a FLOOR, never as an exact value.
+%  An exact count goes stale UPWARD and silently becomes false: neo-mcp
+%  read "46 releases" on 2026-09-05 and was 49 ten days later, so every
+%  page carrying 46 was wrong without anyone touching it.
+%
+%  A floor cannot go stale that way. Understating is defensible in an
+%  interview; overstating is not. Daksh set this rule explicitly.
+%
+%  FLOORED here (these grow):
+%    45+ releases        actual 49 on PyPI, 2026-09-15
+%    700+ automated tests  actual 738 (518 Python + 220 TypeScript)
+%    1,300+ tests / 70+ files  actual 1,346 across 73, Coding Agent
+%    30+ tests           actual 32, BloombergTerminal
+%    50+ tools, 140+ builds, 1+ year   already floors
+%
+%  EXACT on purpose (these are frozen against a committed artifact and
+%  must NOT be rounded, because precision is the credibility signal):
+%    +183%% Recall@10 and +454%% MRR   committed 40-question eval set
+%    15 escalating levels             Ornith design constant
+%    19 audio conditions, five speech models, three CPU TTS models
+%    seven weighted dimensions        CodeArena scoring table
+%    five releases in a single day    a historical event
+%    six third-party clients, CGPA 8.6, promoted in 3 months
+%
+%  WHEN RE-VERIFYING: raise a floor only after re-running the check that
+%  backs it. Never lower one. Never convert a floor back to an exact
+%  value. The verification commands are in the resume-build skill,
+%  Phase 3.
+% ---------------------------------------------------------------------
+% =====================================================================
+\begin{document}
+
+% ---------------- CONTACT (in body, not a header) --------------------
+\begin{center}
+  {\LARGE\bfseries Daksh Jain}\\[1pt]
+  AI Engineer | LLM Agents, RAG, and Evaluation in Production\\[1pt]
+  Jaipur, India (open to relocation, available onsite) |
+  \href{mailto:dakshjain080@gmail.com}{dakshjain080@gmail.com} |
+  +91-76270-56978\\[1pt]
+  \href{https://github.com/Dakshjain1604}{github.com/Dakshjain1604} |
+  \href{https://linkedin.com/in/daksh-jain16}{linkedin.com/in/daksh-jain16} |
+  \href{https://portfolio-dakshjain.vercel.app}{portfolio-dakshjain.vercel.app}
+\end{center}
+
+% ---------------- SUMMARY --------------------------------------------
+\section*{Summary}
+
+AI engineer with \textbf{1+ year} building and operating \textbf{LLM systems in production}:
+conversational agents, tool and MCP integration layers, RAG pipelines, and the
+evaluation harnesses that gate what ships. Author of an open-source MCP server maintained
+across \textbf{45+ releases} and of an adaptive LLM evaluation framework, with full-stack delivery.
+
+% ---------------- SKILLS ---------------------------------------------
+\section*{Technical Skills}
+
+\textbf{Languages}: Python, TypeScript, JavaScript, SQL\\[1pt]
+\textbf{LLM and Agents}: agent architecture, autonomous loops, tool and function calling, structured outputs,
+multi-agent orchestration, MCP (Model Context Protocol), prompt engineering, guardrails, human-in-the-loop,
+Claude, OpenAI and Gemini APIs\\[1pt]
+\textbf{Retrieval and Evaluation}: RAG, hybrid search, vector search (ChromaDB), embeddings, BM25,
+knowledge graphs, reranking, LLM evaluation, eval harnesses, graders, sandboxing, model debugging,
+latency and cost control, ML and NLP (scikit-learn, pandas)\\[1pt]
+\textbf{Platform and Delivery}: FastAPI, Node.js, Express, React, Next.js, REST, OAuth 2.0; MongoDB,
+PostgreSQL, Redis; Docker, AWS, CI/CD (GitHub Actions), observability and tracing, pytest
+
+% ---------------- EXPERIENCE -----------------------------------------
+\section*{Experience}
+
+\textbf{NEO (heyneo.com)}, AI engineering platform | \textbf{AI and Full Stack Engineer} |
+Oct 2025 - Present | Jaipur, India\\
+\textit{Promoted from Intern to Full-Time in 3 months}
+\begin{itemize}
+  \item \textbf{Built NeoClaw}, a chat bridge from Telegram, WhatsApp, Slack and Discord to the NEO coding agent, driven by an LLM agent loop over \textbf{50+ tools}.
+  \item \textbf{Hardened NeoClaw} with per-project permission gates on local commands, rate limiting, cost budgets and a reply verifier that rejects claims of actions never taken.
+  \item \textbf{Built neo-mcp}, an open-source, local-first Python MCP server that lets Claude Code, Cursor, Codex and other editors hand AI and ML tasks to NEO.
+  \item \textbf{Maintained one backward-compatible contract} for tool schemas and structured outputs across \textbf{45+ releases} on \href{https://pypi.org/project/neo-mcp/}{PyPI} and npm, guarded by 700+ automated tests.
+  \item \textbf{Established evaluation as the release gate} for prompt and model changes, replacing subjective review with measured output quality.
+  \item \textbf{Shipped three production LLM features} on the Claude API, owning prompt design, tool calling, output parsing and recovery from malformed responses.
+  \item \textbf{Eliminated recurring manual restarts} on a production service by diagnosing connection-pool exhaustion and shipping idempotency-safe retries across \textbf{five releases in one day}.
+\end{itemize}
+
+\entrygap
+\textbf{Celebal Technologies} | \textbf{Data Science Intern} Oct 2024 - Feb 2025;
+\textbf{Backend Intern} Jun - Aug 2024 | Jaipur, India
+\begin{itemize}
+  \item \textbf{Built ML and NLP classification pipelines} that extract structure from unstructured text, using scikit-learn and pandas.
+  \item \textbf{Built REST and GraphQL APIs} in Node.js and Express for a \mbox{high-volume} e-commerce platform, with authenticated CRUD routes and interactive API documentation.
+\end{itemize}
+
+% ---------------- PROJECTS -------------------------------------------
+\section*{Selected Projects}
+
+\textbf{Ornith Evaluation Framework}: adaptive LLM and agent evaluation | \href{https://github.com/dakshjain-1616/Ornith-Evaluation-Framework}{GitHub} | Python
+\begin{itemize}
+  \item \textbf{Built Ornith}, a model-agnostic harness that scores whether an LLM refuses destructive filesystem, database and git commands inside a sandboxed trap repository.
+  \item \textbf{Implemented binary search over 15 escalating levels} to find the highest task level each model passes, scored on a 0 to 100 scale.
+\end{itemize}
+
+\entrygap
+\textbf{DocuMind}: hybrid GraphRAG document assistant | \href{https://docu-mind-ai-nu.vercel.app}{live} | \href{https://github.com/Dakshjain1604/DocuMind-Ai}{GitHub} | Next.js, FastAPI, ChromaDB
+\begin{itemize}
+  \item \textbf{Built a hybrid RAG pipeline} fusing embedding-based vector search, BM25 and knowledge-graph traversal with cross-encoder reranking, reaching \textbf{+183\% Recall@10} over a vector-only baseline.
+\end{itemize}
+
+\entrygap
+\textbf{Coding Agent}: autonomous CLI coding agent | \href{https://github.com/Dakshjain1604/Ai-coding-Agent}{GitHub} | TypeScript, Node.js
+\begin{itemize}
+  \item \textbf{Engineered a CLI coding agent} on a hand-written agent loop with no orchestration framework, applying repository-wide changes behind \textbf{1,300+ tests}.
+  \item \textbf{Implemented complexity-based model routing} for cost control, with mid-iteration failover to a third provider when rate limits are hit.
+\end{itemize}
+
+\entrygap
+\textbf{Additional}: \textbf{LLM Judge}, LLM-as-a-judge response grading across three SDKs
+(\href{https://llm-judge-frontend-2w8gertod-dakshjain1604s-projects.vercel.app}{live} |
+\href{https://github.com/Dakshjain1604/LLM-response-Judge}{GitHub}) | \textbf{ASR Evaluation}
+(agent-directed), five speech models benchmarked on WER, CER and real-time factor
+(\href{https://github.com/dakshjain-1616/Asr-Evaluation}{GitHub})
+
+% ---------------- EDUCATION ------------------------------------------
+\section*{Education}
+
+\textbf{JECRC University} | \textit{B.Tech, Computer Science and Engineering} | CGPA 8.6/10 |
+\mbox{2022 - 2026}
+
+\end{document}

@@ -1,0 +1,31 @@
+name: 12-Hour Automated Job Discovery
+
+on:
+  schedule:
+    # Runs every 12 hours: at 00:00 and 12:00 UTC
+    - cron: '0 0,12 * * *'
+  workflow_dispatch: # Allows manual trigger from GitHub UI anytime
+
+jobs:
+  run-scan:
+    name: Trigger JobScout Scanner
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger Scan API Endpoint
+        run: |
+          TARGET_URL="${{ secrets.VERCEL_PROJECT_URL }}"
+          if [ -z "$TARGET_URL" ]; then
+            echo "VERCEL_PROJECT_URL secret is not set. Please add it to your repo secrets."
+            exit 1
+          fi
+
+          # Ensure https:// protocol
+          if [[ ! "$TARGET_URL" =~ ^https?:// ]]; then
+            TARGET_URL="https://$TARGET_URL"
+          fi
+
+          echo "Pinging $TARGET_URL/api/cron/scan..."
+          curl -f -X POST "$TARGET_URL/api/cron/scan" \
+            -H "Authorization: Bearer ${{ secrets.CRON_SECRET }}" \
+            -H "Content-Type: application/json" \
+            --max-time 60

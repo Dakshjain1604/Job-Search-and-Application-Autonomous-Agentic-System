@@ -1,17 +1,27 @@
 {
-  "name": "temp-app",
+  "name": "job-scout",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "test": "tsx scripts/test-all.ts && tsx scripts/test-resume-and-apply.ts && tsx scripts/test-auto-apply.ts",
+    "test:ai": "tsx scripts/test-top-100-ai.ts",
+    "test:resume": "tsx scripts/test-resume-and-apply.ts",
+    "test:apply": "tsx scripts/test-auto-apply.ts"
   },
   "dependencies": {
+    "cheerio": "^1.2.0",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "lucide-react": "^1.52.0",
     "next": "16.3.8",
+    "playwright-core": "^1.63.0",
     "react": "19.2.8",
-    "react-dom": "19.2.8"
+    "react-dom": "19.2.8",
+    "tailwind-merge": "^3.7.0"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
@@ -21,6 +31,7 @@
     "eslint": "^9",
     "eslint-config-next": "16.3.8",
     "tailwindcss": "^4",
+    "tsx": "^4.23.15",
     "typescript": "^5"
   }
 }
