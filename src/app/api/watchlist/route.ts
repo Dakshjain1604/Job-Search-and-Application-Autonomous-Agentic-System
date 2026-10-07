@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { getWatchlist, addWatchlistCompany, removeWatchlistCompany } from '@/lib/storage';
+import { getWatchlist, addWatchlistCompany, removeWatchlistCompany, toggleWatchlistCompany } from '@/lib/storage';
 import { TOP_100_AI_COMPANIES } from '@/lib/data/top-ai-companies';
 
 export async function GET(req: NextRequest) {
@@ -20,6 +20,19 @@ export async function GET(req: NextRequest) {
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
+
+    // Support toggle action
+    if (body.action === 'toggle' || body.companyId || (body.id && body.enabled !== undefined)) {
+      const companyId = body.companyId || body.id;
+      if (!companyId) {
+        return NextResponse.json({ success: false, error: 'companyId is required for toggle' }, { status: 400 });
+      }
+      const updated = toggleWatchlistCompany(companyId, body.enabled);
+      if (!updated) {
+        return NextResponse.json({ success: false, error: `Company "${companyId}" not found in watchlist` }, { status: 404 });
+      }
+      return NextResponse.json({ success: true, company: updated, watchlist: getWatchlist() });
+    }
 
     // Support batch importing top AI companies
     if (body.importBatch) {
@@ -88,3 +101,6 @@ export async function DELETE(req: NextRequest) {
     return NextResponse.json({ success: false, error: String(err) }, { status: 500 });
   }
 }
+
+export const PUT = POST;
+export const PATCH = POST;

@@ -39,6 +39,9 @@ export async function POST(req: NextRequest) {
   }
 }
 
+export const PUT = POST;
+export const PATCH = POST;
+
 function extractCommonSkills(text: string): string[] {
   const dictionary = [
     'React', 'Next.js', 'TypeScript', 'JavaScript', 'Node.js', 'Python', 'Go', 'Rust',

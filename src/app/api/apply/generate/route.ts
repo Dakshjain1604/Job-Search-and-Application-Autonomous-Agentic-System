@@ -3,7 +3,13 @@ import { generateApplicationKit } from '@/lib/apply/application-assistant';
 
 export async function POST(req: NextRequest) {
   try {
-    const body = await req.json();
+    const body = await req.json().catch(() => ({}));
+    if (!body || (!body.jobId && !body.customJob)) {
+      return NextResponse.json(
+        { success: false, error: 'jobId or customJob object is required' },
+        { status: 400 }
+      );
+    }
     const kit = await generateApplicationKit(body);
 
     return NextResponse.json({

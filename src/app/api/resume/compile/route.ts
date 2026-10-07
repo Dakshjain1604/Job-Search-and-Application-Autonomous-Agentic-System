@@ -7,11 +7,11 @@ export async function POST(req: NextRequest) {
     const download = searchParams.get('download') === '1';
 
     const body = await req.json();
-    const latex = body.latex;
+    const latex = body.latex || body.latexCode;
 
     if (!latex || typeof latex !== 'string') {
       return NextResponse.json(
-        { success: false, error: 'LaTeX content string is required in request body.' },
+        { success: false, error: 'LaTeX content string (latex or latexCode) is required in request body.' },
         { status: 400 }
       );
     }
@@ -42,6 +42,8 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({
       success: true,
       pdfBase64: compileResult.pdfBase64,
+      pdfUrl: compileResult.pdfBase64 ? `data:application/pdf;base64,${compileResult.pdfBase64}` : undefined,
+      downloadUrl: '/api/resume/compile?download=1',
       pageCount: compileResult.pageCount,
       durationMs: compileResult.durationMs
     });

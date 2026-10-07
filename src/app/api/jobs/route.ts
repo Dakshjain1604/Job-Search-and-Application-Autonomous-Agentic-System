@@ -11,6 +11,7 @@ export async function GET(req: NextRequest) {
     const search = searchParams.get('search') || undefined;
     const juniorOnly = searchParams.get('juniorOnly') === 'true' ? true : undefined;
     const indiaOnly = searchParams.get('indiaOnly') === 'true' ? true : undefined;
+    const remoteOnly = searchParams.get('remoteOnly') === 'true' ? true : undefined;
     const ecosystem = searchParams.get('ecosystem') || undefined;
     const limit = searchParams.get('limit') ? parseInt(searchParams.get('limit')!, 10) : 100;
     const offset = searchParams.get('offset') ? parseInt(searchParams.get('offset')!, 10) : 0;
@@ -22,6 +23,7 @@ export async function GET(req: NextRequest) {
       search,
       juniorOnly,
       indiaOnly,
+      remoteOnly,
       ecosystem,
       limit,
       offset
@@ -39,14 +41,19 @@ export async function GET(req: NextRequest) {
 
 export async function PATCH(req: NextRequest) {
   try {
-    const body = await req.json();
-    const { id, status, notes } = body;
+    const body = await req.json().catch(() => ({}));
+    const id = body?.id || body?.jobId;
+    const status = body?.status;
+    const validStatuses: JobStatus[] = ['NEW', 'SAVED', 'APPLIED', 'INTERVIEWING', 'ARCHIVED'];
 
-    if (!id || !status) {
-      return NextResponse.json({ success: false, error: 'id and status are required' }, { status: 400 });
+    if (!id || !status || !validStatuses.includes(status)) {
+      return NextResponse.json(
+        { success: false, error: 'Valid id and status (NEW, SAVED, APPLIED, INTERVIEWING, ARCHIVED) are required' },
+        { status: 400 }
+      );
     }
 
-    const updated = updateJobStatus(id, status as JobStatus, notes);
+    const updated = updateJobStatus(id, status as JobStatus, body?.notes);
     if (!updated) {
       return NextResponse.json({ success: false, error: 'Job not found' }, { status: 404 });
     }

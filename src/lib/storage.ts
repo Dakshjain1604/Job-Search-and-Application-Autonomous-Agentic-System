@@ -205,6 +205,7 @@ export function getJobListings(filter?: {
   search?: string;
   juniorOnly?: boolean;
   indiaOnly?: boolean;
+  remoteOnly?: boolean;
   ecosystem?: string;
   limit?: number;
   offset?: number;
@@ -222,6 +223,10 @@ export function getJobListings(filter?: {
 
   if (filter?.source && filter.source !== 'all') {
     list = list.filter((j) => j.source === filter.source);
+  }
+
+  if (filter?.remoteOnly) {
+    list = list.filter((j) => j.remote);
   }
 
   if (filter?.juniorOnly) {
@@ -360,6 +365,16 @@ export function addWatchlistCompany(company: Omit<CompanyWatchlist, 'id'>): Comp
   saveDatabase(db);
 
   return newCompany;
+}
+
+export function toggleWatchlistCompany(id: string, enabled?: boolean): CompanyWatchlist | null {
+  const db = loadDatabase();
+  const company = (db.watchlist || []).find((w) => w.id === id || w.slug.toLowerCase() === id.toLowerCase());
+  if (!company) return null;
+
+  company.enabled = enabled !== undefined ? enabled : !company.enabled;
+  saveDatabase(db);
+  return company;
 }
 
 export function removeWatchlistCompany(id: string): boolean {
